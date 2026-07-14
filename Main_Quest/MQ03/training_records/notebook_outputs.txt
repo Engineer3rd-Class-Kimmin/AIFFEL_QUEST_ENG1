@@ -1,0 +1,111 @@
+2026-07-14 06:15:04.743472: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-07-14 06:15:04.766787: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+TensorFlow: 2.15.0
+사전학습 문서 수: 28
+{'vocab': 256, 'pad': 0, 'bos': 2, 'eos': 3, 'start': 4, 'delimiter': 5, 'extract': 6}
+['▁', '생', '성', '적', '▁사', '전', '학습', '을', '▁', '구', '현', '합', '니', '다', '.']
+sentencepiece_trainer.cc(78) LOG(INFO) Starts training with : 
+trainer_spec {
+  input: artifacts/gpt1/pretrain_corpus.txt
+  input_format: 
+  model_prefix: artifacts/gpt1/gpt1_bpe
+  model_type: BPE
+  vocab_size: 256
+  self_test_sample_size: 0
+  character_coverage: 1
+  input_sentence_size: 0
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 16
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 0
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 0
+  user_defined_symbols: <start>
+  user_defined_symbols: <delimiter>
+  user_defined_symbols: <extract>
+  required_chars: 
+  byte_fallback: 0
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 0
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 0
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: nmt_nfkc
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 1
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+trainer_interface.cc(353) LOG(INFO) SentenceIterator is not specified. Using MultiFileSentenceIterator.
+trainer_interface.cc(185) LOG(INFO) Loading corpus: artifacts/gpt1/pretrain_corpus.txt
+trainer_interface.cc(409) LOG(INFO) Loaded all 28 sentences
+trainer_interface.cc(425) LOG(INFO) Adding meta_piece: <pad>
+trainer_interface.cc(425) LOG(INFO) Adding meta_piece: <unk>
+trainer_interface.cc(425) LOG(INFO) Adding meta_piece: <s>
+trainer_interface.cc(425) LOG(INFO) Adding meta_piece: </s>
+trainer_interface.cc(425) LOG(INFO) Adding meta_piece: <start>
+trainer_interface.cc(425) LOG(INFO) Adding meta_piece: <delimiter>
+trainer_interface.cc(425) LOG(INFO) Adding meta_piece: <extract>
+trainer_interface.cc(430) LOG(INFO) Normalizing sentences...
+trainer_interface.cc(539) LOG(INFO) all chars count=948
+trainer_interface.cc(560) LOG(INFO) Alphabet size=230
+trainer_interface.cc(561) LOG(INFO) Final character coverage=1
+trainer_interface.cc(592) LOG(INFO) Done! preprocessed 28 sentences.
+trainer_interface.cc(598) LOG(INFO) Tokenizing input sentences with whitespace: 28
+trainer_interface.cc(609) LOG(INFO) Done! 202
+bpe_model_trainer.cc(159) LOG(INFO) Updating active symbols. max_freq=12 min_freq=1
+trainer_interface.cc(687) LOG(INFO) Saving model: artifacts/gpt1/gpt1_bpe.model
+trainer_interface.cc(699) LOG(INFO) Saving vocabs: artifacts/gpt1/gpt1_bpe.vocab
+LM sequences: (28, 64)
+첫 시퀀스: [  2  26 142 179  89 248 196  31  22 141 120  32  17  72 148  11 112  26
+ 213   9]
+LM logits: (2, 64, 256)
+파라미터 수: 437,504
+[Pre-train] epoch 01 | L1 loss 5.5961
+[Pre-train] epoch 02 | L1 loss 5.3720
+[Pre-train] epoch 03 | L1 loss 5.1769
+[Pre-train] epoch 04 | L1 loss 5.0586
+[Pre-train] epoch 05 | L1 loss 5.0341
+WARNING:tensorflow:Model's `__init__()` arguments contain non-serializable objects. Please implement a `get_config()` method in the subclassed Model for proper saving and loading. Defaulting to empty config.
+WARNING:tensorflow:Model's `__init__()` arguments contain non-serializable objects. Please implement a `get_config()` method in the subclassed Model for proper saving and loading. Defaulting to empty config.
+사전학습 가중치 저장: artifacts/gpt1/gpt1_demo_pretrained.weights.h5
+트랜스포머는는내안연연반줄 떨 화화 공된부수 반실 화화정복복화화 화
+분류: [4, 26, 41, 25, 42, 31, 26, 47, 194, 26, 74, 50, 53, 27, 28, 6]
+문장쌍: [4, 26, 1, 26, 1, 55, 26, 1, 27, 28, 5, 26, 229, 208, 41, 26, 1, 64, 27, 28, 6]
+객관식 후보 수: 3
+분류기 포함 파라미터 수: 437,762
+[Fine-tune] epoch 01 | L3 3.5638 | L2 0.9776 | aux L1 5.1724
+[Fine-tune] epoch 05 | L3 2.8355 | L2 0.5247 | aux L1 4.6215
+[Fine-tune] epoch 10 | L3 2.3480 | L2 0.3163 | aux L1 4.0634
+[Fine-tune] epoch 15 | L3 1.8802 | L2 0.0669 | aux L1 3.6268
+[Fine-tune] epoch 20 | L3 1.4179 | L2 0.0023 | aux L1 2.8310
+{'negative': 0.95017409324646, 'positive': 0.04982588067650795}
+{'negative': 0.9999934434890747, 'positive': 6.536321507155662e-06}
+유사도 logits: (1, 2)
+객관식 logits: (1, 3)
+__DEVIN_METRICS__{"pretrain_losses": [5.596126556396484, 5.3719658851623535, 5.176941394805908, 5.05856990814209, 5.034127235412598], "finetune_losses": [[3.563788890838623, 0.9775934219360352, 5.172390937805176], [3.2417891025543213, 0.7231492400169373, 5.037280082702637], [3.0721333026885986, 0.6230788230895996, 4.898108959197998], [2.979154348373413, 0.6038875579833984, 4.750533103942871], [2.835481882095337, 0.5247498154640198, 4.621463775634766], [2.8523752689361572, 0.606043815612793, 4.492663383483887], [2.6945736408233643, 0.5131312012672424, 4.362885475158691], [2.5262246131896973, 0.3943338692188263, 4.263782024383545], [2.4869728088378906, 0.4118715226650238, 4.15020227432251], [2.3479690551757812, 0.3162705898284912, 4.063397407531738], [2.2901272773742676, 0.30097347497940063, 3.9783077239990234], [2.2400009632110596, 0.2867127060890198, 3.906576156616211], [2.097532033920288, 0.17950357496738434, 3.8360562324523926], [1.9538346529006958, 0.08425679057836533, 3.7391555309295654], [1.8802474737167358, 0.06685905903577805, 3.626777172088623], [1.7871825695037842, 0.03862709924578667, 3.4971108436584473], [1.691085934638977, 0.013097439892590046, 3.3559772968292236], [1.6006299257278442, 0.005528924521058798, 3.190202474594116], [1.5118663311004639, 0.003707366529852152, 3.01631760597229], [1.4178664684295654, 0.0023423724342137575, 2.8310484886169434]], "all_losses_finite": true, "train_accuracy": 1.0, "train_predictions": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0], "positive_probe": {"negative": 0.95017409324646, "positive": 0.04982588067650795}, "negative_probe": {"negative": 0.9999934434890747, "positive": 6.536321507155662e-06}, "heldout_probe_texts": ["연출이 훌륭하고 아주 재미있는 영화였다.", "배우의 연기가 인상적이고 이야기가 감동적이다.", "흥미로운 전개 덕분에 즐겁게 감상했다.", "따뜻한 내용과 뛰어난 연출이 만족스럽다.", "지루하고 이해하기 어려워서 실망했다.", "배우의 연기가 어색하고 내용도 산만하다.", "전개가 느리고 재미가 없어 다시 보고 싶지 않다.", "불쾌하고 답답한 이야기라 끝까지 보기 힘들었다."], "heldout_labels": [1, 1, 1, 1, 0, 0, 0, 0], "heldout_predictions": [0, 1, 1, 1, 0, 0, 0, 1], "heldout_probabilities": [[0.95017409324646, 0.04982588067650795], [9.396868335898034e-06, 0.9999905824661255], [0.07771186530590057, 0.9222881197929382], [0.04884609952569008, 0.9511539340019226], [0.9999934434890747, 6.536321507155662e-06], [0.9999887943267822, 1.1259748134762049e-05], [0.9998500347137451, 0.0001499337377026677], [0.036698438227176666, 0.9633015394210815]], "heldout_accuracy": 0.75, "heldout_positive_recall": 0.75, "heldout_negative_recall": 0.75, "generated_text": "트랜스포머는  배 ⁇  ⁇ 다미는기기 ⁇ 운 영 ⁇ 고 한 고  ⁇ 다..로 다..상", "generated_length": 47, "prompt_length": 6, "prefix_logit_max_abs_diff": 0.0, "suffix_logit_max_abs_diff": 2.786853790283203, "trimmed_lm_loss": 5.88264274597168, "padded_lm_loss": 5.88264274597168, "padding_loss_abs_diff": 0.0, "similarity_shape": [1, 2], "multiple_choice_shape": [1, 3], "checkpoint_size_bytes": 1814576, "lm_logits_shape": [2, 64, 256]}
+__DEVIN_CHECKS__{"all_losses_finite": true, "pretrain_loss_decreased": true, "finetune_l2_decreased": true, "train_accuracy_at_least_87_5_percent": true, "positive_probe_direction": false, "negative_probe_direction": true, "heldout_accuracy_at_least_75_percent": true, "heldout_positive_recall_at_least_50_percent": true, "heldout_negative_recall_at_least_50_percent": true, "positive_probabilities_normalized": true, "negative_probabilities_normalized": true, "generation_extends_prompt": true, "causal_prefix_invariant": true, "different_suffix_changes_suffix": true, "padding_loss_invariant": true, "similarity_shape": true, "multiple_choice_shape": true, "lm_logits_shape": true, "checkpoint_larger_than_100kb": true}

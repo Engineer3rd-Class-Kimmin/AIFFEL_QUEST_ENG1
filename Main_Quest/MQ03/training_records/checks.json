@@ -1,0 +1,21 @@
+{
+  "all_losses_finite": true,
+  "pretrain_loss_decreased": true,
+  "finetune_l2_decreased": true,
+  "train_accuracy_at_least_87_5_percent": true,
+  "positive_probe_direction": false,
+  "negative_probe_direction": true,
+  "heldout_accuracy_at_least_75_percent": true,
+  "heldout_positive_recall_at_least_50_percent": true,
+  "heldout_negative_recall_at_least_50_percent": true,
+  "positive_probabilities_normalized": true,
+  "negative_probabilities_normalized": true,
+  "generation_extends_prompt": true,
+  "causal_prefix_invariant": true,
+  "different_suffix_changes_suffix": true,
+  "padding_loss_invariant": true,
+  "similarity_shape": true,
+  "multiple_choice_shape": true,
+  "lm_logits_shape": true,
+  "checkpoint_larger_than_100kb": true
+}
