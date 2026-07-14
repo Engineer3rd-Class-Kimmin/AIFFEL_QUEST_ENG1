@@ -1,0 +1,11 @@
+{
+  "code_cell_count": 14,
+  "executed_code_cell_count": 14,
+  "error_output_count": 0,
+  "errors": [],
+  "checks_passed": 18,
+  "checks_total": 19,
+  "failed_checks": [
+    "positive_probe_direction"
+  ]
+}
