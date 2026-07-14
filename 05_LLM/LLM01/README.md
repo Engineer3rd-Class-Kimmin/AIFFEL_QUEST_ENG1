@@ -1,23 +1,6 @@
 # AIFFEL Campus Online Code Peer Review Templete
-- 코더 : 조희연
+- 코더 : 코더의 이름을 작성하세요.
 - 리뷰어 : 리뷰어의 이름을 작성하세요.
-
-## 프로젝트: GPT-1 — Generative Pre-Training 논문 구현
-
-`gpt1_generative_pretraining.ipynb`에서 번역기·챗봇에 사용한 Transformer를
-decoder-only 구조로 변경해 GPT-1의 학습 프레임워크를 구현했습니다.
-
-- Causal Multi-Head Self-Attention
-- 학습 가능한 토큰/위치 임베딩과 embedding weight tying
-- 사전학습 언어 모델 목적함수 \(L_1\)
-- 지도학습 분류 목적함수 \(L_2\)
-- 보조 언어 모델 목적함수를 포함한 \(L_3=L_2+\lambda L_1\)
-- `<start>`, `<delimiter>`, `<extract>` 기반 task-aware input transformation
-- 분류, 문장쌍/함의, 유사도, 객관식 task head
-- SentencePiece BPE와 작은 한국어 데이터로 실행 가능한 end-to-end 예제
-
-기본 하이퍼파라미터는 CPU 데모용이며, 노트북 마지막에 GPT-1 논문의
-12-layer/768-hidden/12-head 설정과 실제 대규모 학습 시 고려사항을 정리했습니다.
 
 # PRT(Peer Review Template)
 - [ ]  **1. 주어진 문제를 해결하는 완성된 코드가 제출되었나요?**
