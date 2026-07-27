@@ -1,6 +1,12 @@
 # AIFFEL Campus Online Code Peer Review Templete
-- 코더 : 코더의 이름을 작성하세요.
+- 코더 : 조희연
 - 리뷰어 : 리뷰어의 이름을 작성하세요.
+
+## 프로젝트
+- 주제 : Day 2 실습 — Advanced·Modular RAG + RAGAS 평가
+- 제출물 : [`Advanced_Modular_RAG_RAGAS.ipynb`](./Advanced_Modular_RAG_RAGAS.ipynb) (전체 셀 실행 출력 포함)
+- 내용 : KorQuAD v1 Naive RAG 베이스라인 → Multi-Query / RAG-Fusion(RRF) / HyDE / Cross-encoder Reranking / Self-RAG → RAGAS 4대 지표 비교 → KLUE-MRC(뉴스) 도메인 추가 실습
+- 실행 : OpenAI API 키는 Colab 보안 비밀 `OPENAI_KEY` 또는 환경 변수 `OPENAI_API_KEY` 로 주입 (노트북에 하드코딩하지 않음)
 
 # PRT(Peer Review Template)
 - [ ]  **1. 주어진 문제를 해결하는 완성된 코드가 제출되었나요?**
