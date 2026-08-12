@@ -28,10 +28,13 @@ state_dict, TorchScript, ONNX 방식으로 저장한 모델의 추론 결과를 
 
 모델 배포 실습을 완료한 후 최종 프로젝트 파일 구조를 확인하였다.
 
-state_dict, TorchScript, ONNX 모델 파일과
-모델 추론을 위한 `model_utils.py` 파일이 정상적으로 생성되었다.
+`.venv_heeyeon` 고유 가상환경이 생성되었으며,
+`app/model_utils.py`와 state_dict, TorchScript, ONNX 모델 파일이
+정상적으로 생성된 것을 확인하였다.
 
-![5.7 프로젝트 최종 구조](./images/5.7%20프로젝트%20최종%20구조%20확인.png)## 섹션 1. 모델 학습과 배포
+![5.7 프로젝트 최종 구조 확인](./images/5.7%20최종%20구조%20확인.png)
+
+## 섹션 1. 모델 학습과 배포
 
 ### Q1. `.pth` 파일만 전달했을 때 상대방이 모델을 바로 사용할 수 없는 이유는 무엇입니까?
 
