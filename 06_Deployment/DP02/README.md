@@ -51,7 +51,7 @@ Pydantic 스키마를 이용하여 입력과 출력 형식을 정의하고,
 Swagger UI의 `POST /predict`에서 Request Body에
 MNIST 이미지의 `pixel_values`를 입력하여 추론을 요청하였다.
 
-![5.1 predict 요청](./images/5.1%20predict%20요청.png)
+![5.1 predict 요청](./images/5.1_predict_request.png)
 
 ### Predict 결과
 
